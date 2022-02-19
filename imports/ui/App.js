@@ -22,10 +22,5 @@ Template.body.events({
         }
         event.target.text.value = "";
         event.preventDefault();
-    },
-});
-
-Template.sendMessage.events({
-    'change input': function(event) {  
     }
-  })
+});
