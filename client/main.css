@@ -1,0 +1,171 @@
+*{
+    font-family: 'Assistant', sans-serif;
+}
+
+body {
+    background-color: #315481;
+    background-image:
+        radial-gradient(ellipse farthest-corner at 0 0, 
+        rgba(0,0,0,.2) 0%, rgba(62,45,177, .3) 50%,
+        rgba(255, 255, 255, 0.3) 95%), 
+        linear-gradient(to bottom, #b8e5ff, #9825da 100%);  
+    background-attachment: fixed;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 30px 0px;  
+    line-height: 1.5;
+}
+  
+.container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 100%;
+    background: white;
+    border-radius: 25px;
+}
+  
+header {
+    background: #1c194d;
+    border-bottom: 2px solid #4b4297;
+    padding: 20px 15px 18px 15px;
+    line-height: 1;
+    border-radius: 25px 25px 0px 0px;
+    text-align: center;
+}
+
+.login{
+    position: absolute;
+    left: 14px;
+    top: 50px;
+    font-size: 18px;
+    color: rgb(236, 236, 236);
+}
+
+h1 {
+    font-size: 30px;
+    color: #ffffff;
+    margin: auto;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.chat{
+    overflow-y: scroll;
+    word-wrap: break-word;
+}
+
+.message-window {
+    position: absolute;
+    top: 80px;
+    bottom: 70px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0;
+    padding: 0;
+    background-color: #242057;
+    overflow: scroll;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 85px;
+    box-sizing: border-box;
+    padding: 30px 15px 15px 15px;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    background-color: #242057;
+    border-radius: 0px 0px 25px 25px; 
+}
+  
+form {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+  
+.new-message input {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    background-color: #6e62e2;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+  
+.new-message input:focus{
+    outline: 0;
+}
+
+::placeholder{
+    color: white;
+    opacity: 0.7;
+}
+
+.file-upload{
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.file-upload input{
+    display:none
+}
+  
+.message {
+    position: relative;
+    list-style: none;
+    padding: 15px;
+    border-bottom: #3f3b77 solid 1px;
+    color: rgb(236, 236, 236);
+    background-color: transparent;
+}
+
+.username-date{
+    font-size: 14px;
+}
+
+.username{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.message-date{
+    margin-left: 8px;
+    color: #b9b1ff;
+}
+
+.message-text{
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+/* LOGIN */
+#login-dropdown-list{
+    text-align: left;
+}
+  
+#login-buttons .login-button{
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #3f3b77;
+    opacity: 0.9;
+    transition: background-color 0.4s;
+}
+  
+#login-buttons .login-button:hover{
+    background-color: #5e2cad;
+}
+
+.accounts-dialog, .accounts-dialog label{
+    font-size: 18px;
+}

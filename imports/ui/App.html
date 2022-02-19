@@ -1,0 +1,42 @@
+<body>
+    <div class="container">
+        <header>
+            <span class="login"> {{> loginButtons}} </span>
+            <h1>Chat Project</h1>
+        </header>
+
+        <!-- chat messages here -->
+        <div class="chat">
+            <ul class="message-window">
+                {{#each recentMessages}}
+                    {{> message}}
+                {{/each}}
+            </ul>
+        </div>
+
+        <!-- more-messages button -->
+        <footer>
+            {{#if currentUser}}
+                {{> sendMessage}}
+            {{else}}
+                You need to login to send a message.
+            {{/if}}
+        </footer>
+    </div>
+</body>    
+
+<template name="message">
+    <li class="message">
+        <div class="username-date"> 
+            <span class="username">{{username}}</span> 
+            <span class="message-date">{{createdAt}} </span>
+        </div>
+        <div class="message-text">{{text}}</div>
+    </li>
+</template>
+
+<template name="sendMessage">
+    <form class="new-message">
+        <input type="text" name="text" placeholder="Envie uma mensagem" autocomplete="off"/>
+    </form>
+</template>
