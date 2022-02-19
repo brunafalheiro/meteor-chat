@@ -13,6 +13,7 @@ Meteor.startup(() => {
       password: SEED_PASSWORD,
     });
   }
+  Messages.remove({});
 });
 
 Meteor.publish("messages", function () {
@@ -28,5 +29,9 @@ Meteor.methods({
       createdAt: `${month} ${date.getDay()}, ${date.getFullYear()} at ${date.getHours()}:${date.getMinutes()}`,
       username: username
     });
+  },
+
+  deleteMessage: function(id){
+    Messages.remove(id);
   }
 });

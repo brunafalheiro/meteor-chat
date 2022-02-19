@@ -12,12 +12,15 @@
                     {{> message}}
                 {{/each}}
             </ul>
+            <div class="scroll-down">
+                <button type="button" class="scroll-down-button"></button>
+            </div>
         </div>
-
+        
         <!-- more-messages button -->
         <footer>
             {{#if currentUser}}
-                {{> sendMessage}}
+            {{> sendMessage}}
             {{else}}
                 You need to login to send a message.
             {{/if}}
@@ -29,9 +32,14 @@
     <li class="message">
         <div class="username-date"> 
             <span class="username">{{username}}</span> 
-            <span class="message-date">{{createdAt}} </span>
+            <span class="message-date">{{createdAt}}</span>
+            {{#if currentUser}}
+                <span class="delete-message"><button type="button">delete</button></span>
+            {{/if}}
         </div>
-        <div class="message-text">{{text}}</div>
+        <div class="message-text">
+            {{text}}
+        </div>
     </li>
 </template>
 

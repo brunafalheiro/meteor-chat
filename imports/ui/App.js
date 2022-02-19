@@ -9,18 +9,24 @@ Accounts.ui.config({
 });
 
 Template.body.helpers({
-    recentMessages: function () {
+    recentMessages: function(){
         return Messages.find({});
     }
 });
 
 Template.body.events({
-    "submit .new-message": function (event) {
+    "submit .new-message": function(event){
         message = event.target.text.value;
         if(message !== ""){
             Meteor.call("sendMessage", event.target.text.value, Meteor.user().username);
         }
         event.target.text.value = "";
         event.preventDefault();
+    }
+});
+
+Template.message.events({
+    "click .delete-message": function(event){
+        Meteor.call("deleteMessage", this._id);
     }
 });

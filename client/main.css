@@ -1,5 +1,7 @@
 *{
     font-family: 'Assistant', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -8,7 +10,7 @@ body {
         radial-gradient(ellipse farthest-corner at 0 0, 
         rgba(0,0,0,.2) 0%, rgba(62,45,177, .3) 50%,
         rgba(255, 255, 255, 0.3) 95%), 
-        linear-gradient(to bottom, #b8e5ff, #9825da 100%);  
+        linear-gradient(to bottom, #b8e5ff, #4b0f5a 100%);  
     background-attachment: fixed;
     position: absolute;
     top: 0;
@@ -21,20 +23,20 @@ body {
   
 .container {
     position: relative;
+    margin: auto;
     max-width: 600px;
-    margin: 0 auto;
     min-height: 100%;
-    background: white;
     border-radius: 25px;
+    box-shadow: 0 0 30px #1c194d;
 }
   
 header {
-    background: #1c194d;
-    border-bottom: 2px solid #4b4297;
     padding: 20px 15px 18px 15px;
+    background: #1c194d;
+    border-bottom: 2px solid #5e2cad;
+    text-align: center;
     line-height: 1;
     border-radius: 25px 25px 0px 0px;
-    text-align: center;
 }
 
 .login{
@@ -42,19 +44,21 @@ header {
     left: 14px;
     top: 50px;
     font-size: 18px;
-    color: rgb(236, 236, 236);
+    color:#ececec;
 }
 
 h1 {
-    font-size: 30px;
-    color: #ffffff;
     margin: auto;
-    margin-bottom: 10px;
-    display: inline-block;
+    margin-top: 10px;
+    font-family: 'Overpass', sans-serif;
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 8px #353535;
+    letter-spacing: 2px;
 }
 
 .chat{
-    overflow-y: scroll;
+    overflow: auto;
     word-wrap: break-word;
 }
 
@@ -68,6 +72,27 @@ h1 {
     padding: 0;
     background-color: #242057;
     overflow: scroll;
+}
+
+.scroll-down{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 90px;
+    margin-right: 25px;
+}
+
+.scroll-down button {
+    width: 40px;
+    height: 40px;
+    background-image: url("images/arrow.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #242057;
+    box-shadow: #000000 5px 5px 20px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
 }
 
 footer {
@@ -87,7 +112,6 @@ footer {
   
 form {
     margin-top: -10px;
-    margin-bottom: 10px;
     position: relative;
 }
   
@@ -98,6 +122,7 @@ form {
     border: none;
     border-radius: 20px;
     background-color: #6e62e2;
+    box-shadow: 0 0 30px #191838;
     color: white;
     font-weight: bold;
     font-size: 18px;
@@ -112,22 +137,11 @@ form {
     opacity: 0.7;
 }
 
-.file-upload{
-    padding: 6px 12px;
-    cursor: pointer;
-}
-
-.file-upload input{
-    display:none
-}
-  
 .message {
-    position: relative;
     list-style: none;
     padding: 15px;
     border-bottom: #3f3b77 solid 1px;
-    color: rgb(236, 236, 236);
-    background-color: transparent;
+    color: #ececec;
 }
 
 .username-date{
@@ -142,6 +156,22 @@ form {
 .message-date{
     margin-left: 8px;
     color: #b9b1ff;
+}
+
+.delete-message{
+    position: absolute;
+    right: 0;
+    margin: 5px 10px 0px 0px;
+}
+
+.delete-message button{
+    background-color: #3f3b77;
+    border-radius: 100px;
+    border: none;
+    color: #ececec;
+    font-weight: bold;
+    width: 50px;
+    cursor: pointer;
 }
 
 .message-text{
@@ -168,4 +198,48 @@ form {
 
 .accounts-dialog, .accounts-dialog label{
     font-size: 18px;
+}
+
+@media(max-width: 600px){
+    body{
+        position: fixed;
+        height: 100vh;
+        margin: 0;
+    }
+
+    header, footer{
+        border-radius: 0;
+    }
+
+    .login{
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 25px;
+        margin-top: 15px;
+    }
+
+    .new-message input {
+        font-size: 16px;
+    }
+
+    .username-date{
+        font-size: 10px;
+    }
+
+    .username{
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .delete-message button{
+        width: 45px;
+        font-size: 12px;
+    }
+
+    .message-text{
+        margin-top: 5px;
+        font-size: 18px;
+    }
 }
