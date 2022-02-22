@@ -5,7 +5,6 @@
 }
 
 body {
-    background-color: #315481;
     background-image:
         radial-gradient(ellipse farthest-corner at 0 0, 
         rgba(0,0,0,.2) 0%, rgba(62,45,177, .3) 50%,
@@ -17,8 +16,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    margin: 30px 0px;  
-    line-height: 1.5;
+    margin: 30px 0px;
 }
   
 .container {
@@ -28,6 +26,7 @@ body {
     min-height: 100%;
     border-radius: 25px;
     box-shadow: 0 0 30px #1c194d;
+    background-color: #242057;
 }
   
 header {
@@ -41,8 +40,8 @@ header {
 
 .login{
     position: absolute;
-    left: 14px;
-    top: 50px;
+    left: 10px;
+    top: 55px;
     font-size: 18px;
     color:#ececec;
 }
@@ -53,12 +52,11 @@ h1 {
     font-family: 'Overpass', sans-serif;
     font-size: 30px;
     color: white;
-    text-shadow: 2px 2px 8px #353535;
+    text-shadow: 2px 2px 8px #000000;
     letter-spacing: 2px;
 }
 
 .chat{
-    overflow: auto;
     word-wrap: break-word;
 }
 
@@ -70,8 +68,7 @@ h1 {
     max-width: 600px;
     margin: 0;
     padding: 0;
-    background-color: #242057;
-    overflow: scroll;
+    overflow-y: auto;
 }
 
 .scroll-down{
@@ -89,7 +86,7 @@ h1 {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #242057;
-    box-shadow: #000000 5px 5px 20px;
+    box-shadow: #000000 3px 3px 15px;
     border-radius: 50px;
     border: none;
     cursor: pointer;
@@ -116,6 +113,8 @@ form {
 }
   
 .new-message input {
+    position: absolute;
+    left: 0;
     box-sizing: border-box;
     padding: 10px;
     width: 100%;
@@ -202,22 +201,21 @@ form {
 
 @media(max-width: 600px){
     body{
-        position: fixed;
-        height: 100vh;
-        margin: 0;
+        background-color: #242057;
+        background-image: none;
+        margin-top: 0px;
     }
 
     header, footer{
         border-radius: 0;
     }
 
-    .login{
-        font-size: 16px;
+    .container{
+        box-shadow: none
     }
 
-    h1 {
-        font-size: 25px;
-        margin-top: 15px;
+    .login{
+        font-size: 16px;
     }
 
     .new-message input {
@@ -239,7 +237,6 @@ form {
     }
 
     .message-text{
-        margin-top: 5px;
         font-size: 18px;
     }
 }

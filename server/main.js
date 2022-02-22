@@ -1,10 +1,10 @@
 import { Meteor } from 'meteor/meteor';
-import { Messages } from '../imports/api/Messages.js'
+import { Messages } from '../imports/api/Messages.js';
 
-const SEED_USERNAME = 'meteor'
-const SEED_PASSWORD = 'password'
-const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug',
-'Sep','Oct','Nov','Dec']
+const SEED_USERNAME = 'meteor';
+const SEED_PASSWORD = 'password';
+const months = ['Jan','Feb','Mar','Apr','May','Jun',
+'Jul','Aug','Sep','Oct','Nov','Dec'];
 
 Meteor.startup(() => {  
   if(!Accounts.findUserByUsername(SEED_USERNAME)) {
@@ -17,7 +17,7 @@ Meteor.startup(() => {
 });
 
 Meteor.publish("messages", function () {
-  return Messages.find({}, {sort: {createdAt: -1}});
+  return Messages.find({});
 });
 
 Meteor.methods({
@@ -26,7 +26,7 @@ Meteor.methods({
     var month = months[date.getMonth()];
     Messages.insert({
       text: text,
-      createdAt: `${month} ${date.getDay()}, ${date.getFullYear()} at ${date.getHours()}:${date.getMinutes()}`,
+      createdAt: `${month} ${date.getUTCDate()}, at ${date.getHours()}:${date.getUTCMinutes()}`,
       username: username
     });
   },

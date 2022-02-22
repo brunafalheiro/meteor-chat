@@ -1,6 +1,7 @@
 import './App.html'
 import { Messages } from '../api/Messages'
 import { Meteor } from 'meteor/meteor'
+import { Tracker } from 'meteor/tracker'
 
 Meteor.subscribe("messages");
 

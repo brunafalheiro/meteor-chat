@@ -5,7 +5,6 @@
             <h1>Chat Project</h1>
         </header>
 
-        <!-- chat messages here -->
         <div class="chat">
             <ul class="message-window">
                 {{#each recentMessages}}
@@ -17,10 +16,9 @@
             </div>
         </div>
         
-        <!-- more-messages button -->
         <footer>
             {{#if currentUser}}
-            {{> sendMessage}}
+                {{> sendMessage}}
             {{else}}
                 You need to login to send a message.
             {{/if}}
