@@ -26,7 +26,7 @@ Meteor.methods({
     var month = months[date.getMonth()];
     Messages.insert({
       text: text,
-      createdAt: `${month} ${date.getUTCDate()}, at ${date.getHours()}:${date.getUTCMinutes()}`,
+      createdAt: `${month} ${date.getDate()}, at ${date.getHours()}:${date.getMinutes()}`,
       username: username,
       userID: id
     });
