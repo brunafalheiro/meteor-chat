@@ -21,13 +21,14 @@ Meteor.publish("messages", function () {
 });
 
 Meteor.methods({
-  sendMessage: function (text, username) {
+  sendMessage: function (text, username, id) {
     var date = new Date();
     var month = months[date.getMonth()];
     Messages.insert({
       text: text,
       createdAt: `${month} ${date.getUTCDate()}, at ${date.getHours()}:${date.getUTCMinutes()}`,
-      username: username
+      username: username,
+      userID: id
     });
   },
 

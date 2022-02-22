@@ -31,7 +31,7 @@
         <div class="username-date"> 
             <span class="username">{{username}}</span> 
             <span class="message-date">{{createdAt}}</span>
-            {{#if currentUser}}
+            {{#if checkUser userID}}
                 <span class="delete-message"><button type="button">delete</button></span>
             {{/if}}
         </div>

@@ -19,10 +19,18 @@ Template.body.events({
     "submit .new-message": function(event){
         message = event.target.text.value;
         if(message !== ""){
-            Meteor.call("sendMessage", event.target.text.value, Meteor.user().username);
+            Meteor.call("sendMessage", event.target.text.value, Meteor.user().username, Meteor.userId());
         }
         event.target.text.value = "";
         event.preventDefault();
+    }
+});
+
+Template.message.helpers({
+    checkUser: function(userID){
+        if(Meteor.userId() === userID)
+            return true;
+        return false;
     }
 });
 
